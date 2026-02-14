@@ -5,20 +5,33 @@ on:
     branches:
       - main
   workflow_dispatch:
+
 jobs:
   build:
-    name: Build
+    name: Build React App
     runs-on: ubuntu-latest
-    steps:
-      - name: create static deployment file
-        run: |
-          mkdir dist
-          echo "<h1>Hello GitHub Pages</h1>" >> dist/index.html
 
-      - name: Update pages artifact
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
+
+      - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist/
+
   deploy:
     needs: build
     permissions:
@@ -28,6 +41,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
