@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import './TextTyper.css'
 
 interface TextTyperProps {
-    roles : string[],
+    sentences : string[],
 }
 
 function TextTyper(props: TextTyperProps) {
@@ -16,7 +16,7 @@ function TextTyper(props: TextTyperProps) {
   const endPauseTime = 1000
   const startPauseTime = 200
 
-  const roles = props.roles;
+  const sentences = props.sentences;
 
   function getCommonPrefix(a: string, b: string) {
     let i = 0
@@ -27,8 +27,8 @@ function TextTyper(props: TextTyperProps) {
   }
 
   useEffect(() => {
-    const current = roles[roleIndex]
-    const next = roles[(roleIndex + 1) % roles.length]
+    const current = sentences[roleIndex]
+    const next = sentences[(roleIndex + 1) % sentences.length]
     const prefix = getCommonPrefix(current, next)
 
     let timeout: ReturnType<typeof setTimeout>
@@ -56,7 +56,7 @@ function TextTyper(props: TextTyperProps) {
       } else {
         timeout = setTimeout(() => {
           setIsDeleting(false)
-          setRoleIndex((prev) => (prev + 1) % roles.length)
+          setRoleIndex((prev) => (prev + 1) % sentences.length)
         }, startPauseTime)
       }
     }
