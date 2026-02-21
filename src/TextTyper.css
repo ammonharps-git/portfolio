@@ -1,0 +1,13 @@
+.cursor {
+  display: inline-block;
+  margin-left: 2px;
+}
+
+.cursor-blink {
+  animation: blink 2s infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1 }
+  25%, 75% { opacity: 0 }
+}
