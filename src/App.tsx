@@ -8,8 +8,7 @@ import TextTyper from './TextTyper.tsx'
     "Software Engineer",
     "Software Developer",
     "Software Architect",
-    "Backpacker"
-  ]
+  ];
 
 
 function App() {
