@@ -18,6 +18,9 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: portfolio-web
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -36,7 +39,7 @@ jobs:
         uses: actions/upload-pages-artifact@v4
         with:
           # Upload dist folder
-          path: './dist'
+          path: './portfolio-web/dist'
   deploy:
     needs: build
     environment:
