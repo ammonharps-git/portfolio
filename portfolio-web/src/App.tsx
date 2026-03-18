@@ -13,6 +13,7 @@ import TextTyper from './TextTyper.tsx'
 function App() {
   return (
     <>
+      <title>Ammon's Portfolio</title>
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
