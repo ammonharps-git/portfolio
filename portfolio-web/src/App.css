@@ -1,48 +1,52 @@
+/* General */
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
+
+  /* Variables */
+  --header-logo-size: 30px;
+
+  /* Colors */
+  --text-secondary: #888;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
+/* Header + Footer */
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.read-the-docs {
-  color: #888;
-}
-
+.header, 
 .footer {
   background: rgba(0, 0, 0, 0.30);
   position: fixed;
-  bottom: 0;
   left: 0;
   width: 100%;
-  text-align: center;
   padding: 10px;
+  flex-direction: row;
+  align-items: center;
+  color: var(--text-secondary);
 }
+
+.header {
+  top: 0;
+  text-align: left;
+  display: flex;
+}
+
+.headerText {
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.header-logo {
+  cursor: pointer;
+  width: var(--header-logo-size);
+  height: var(--header-logo-size);
+  border-radius: var(--header-logo-size);
+}
+
+
+.footer {
+  bottom: 0;
+  text-align: center;
+}
+
