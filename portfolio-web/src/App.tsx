@@ -1,32 +1,21 @@
 import simpleLogo from './assets/simple-logo.png'
+import * as Constants from './Constants.ts'
 import './App.css'
-import TextTyper from './TextTyper.tsx'
-
-  const roles = [
-    "Software Engineer",
-    "Software Developer",
-    "Software Architect",
-  ];
-
-  const firstName = "Ammon";
-  const lastName = "Harps";
-  const fullName = firstName + " " + lastName;
-  const githubLink = "https://github.com/ammonharps-git";
+import Home from './pages/home/Home.tsx'
 
 function App() {
   return (
     <>
-      <title>Ammon's Portfolio</title>
+      <title>{Constants.FIRST_NAME}'s Portfolio</title>
       <div className='header'>
-        <img src={simpleLogo} className='header-logo' alt={`${fullName} Logo`}></img>
+        <img src={simpleLogo} className='header-logo' alt={`${Constants.FULL_NAME} Logo`}></img>
         <div className='headerText'>Home</div>
         <div className='headerText'>Contact Me</div>
         {/* TODO: Make these nav links */}
       </div>
-      <h1>{fullName}</h1>
-      <TextTyper sentences={roles}/>
+      <Home/>
       <div className='footer'>
-          Check out my github at <a href={githubLink} target='_blank'>ammonharps-git</a> to see more of my projects.
+          Check out my github at <a href={Constants.GITHUB_LINK} target='_blank'>{Constants.GITHUB_USERNAME}</a> to see more of my projects.
       </div>
     </>
   )
