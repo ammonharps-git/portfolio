@@ -45,6 +45,10 @@ function Home() {
             <img className='profileImage hoverGlow' src={profileImage} alt={`${Constants.FULL_NAME} profile picture`} />
         </div>
         <div className='skillsContainer'>
+          <div className='sectionTitle'>
+            Explore Languages
+          </div>
+          <div className='skillsGrid'>
           {
             skills.map(skill => (
               <div className='skillCard'>
@@ -55,6 +59,7 @@ function Home() {
               </div>
             ))
           }
+          </div>
         </div>
     </div>
   )
