@@ -7,11 +7,8 @@ import './Home.css'
 function Home() {
   class LabeledLogo {
     public image : string;
-
     public label : string;
-
     public labelBackgroundColor : string;
-
     public textColorOverride : string | undefined;
 
     constructor(image: string, label : string, labelColor: string, textColorOverride?: string) {
@@ -35,6 +32,29 @@ function Home() {
     new LabeledLogo(Logos.java, "Java", "#ff8b43"),
   ];
 
+  class SectionTitle {
+    public mainTitle : string;
+    public subTitle : string;
+
+    constructor(mainTitle: string, subTitle : string) {
+      this.mainTitle = mainTitle;
+      this.subTitle = subTitle;
+    }
+  }
+
+  function renderSectionTitle(title : SectionTitle) {
+    return (
+      <div className='sectionTitleContainer'>
+        <div className='sectionTitle'>
+          {title.mainTitle}
+        </div>
+        <div className='sectionSubTitle'>
+          {title.subTitle}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className='sectionsContainer'>
         <div className='profileContainer'>
@@ -45,18 +65,12 @@ function Home() {
             <img className='profileImage hoverGlow' src={profileImage} alt={`${Constants.FULL_NAME} profile picture`} />
         </div>
         <div className='skillsContainer'>
-          <div className='sectionTitleContainer'>
-            <div className='sectionTitle'>
-              Explore Languages
-            </div>
-            <div className='sectionSubTitle'>
-              Click an icon to see more.
-            </div>
-          </div>
+          {renderSectionTitle(new SectionTitle("Explore Languages", "Click an icon to see more."))}
           <div className='skillsGrid'>
           {
             skills.map(skill => (
               <div className='skillCard'>
+                { /* TODO: make these expand into small blurb when clicked */}
                 <img className='skillImage hoverGlow' src={skill.image}/>
                 <div className='skillLabel' style={{background: skill.labelBackgroundColor, color: skill.textColorOverride}}>
                   {skill.label}
