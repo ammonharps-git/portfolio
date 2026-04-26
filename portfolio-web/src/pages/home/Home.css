@@ -96,9 +96,9 @@
 }
 
 .skillImage {
-    /* TODO */
     max-width: var(--skill-image-max-size);
     max-height: var(--skill-image-max-size);
+    cursor: pointer;
 }
 
 .skillLabel {
