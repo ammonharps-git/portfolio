@@ -45,8 +45,13 @@ function Home() {
             <img className='profileImage hoverGlow' src={profileImage} alt={`${Constants.FULL_NAME} profile picture`} />
         </div>
         <div className='skillsContainer'>
-          <div className='sectionTitle'>
-            Explore Languages
+          <div className='sectionTitleContainer'>
+            <div className='sectionTitle'>
+              Explore Languages
+            </div>
+            <div className='sectionSubTitle'>
+              Click an icon to see more.
+            </div>
           </div>
           <div className='skillsGrid'>
           {

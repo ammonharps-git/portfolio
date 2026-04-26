@@ -7,12 +7,13 @@
   --skill-image-max-size: 100px;
   --skill-card-max-height: 150px;
   --skill-card-max-width: 100px;
+  --text-secondary: #888;
 }
 
 .sectionsContainer {
+    margin-top: 50px; /* Offset from header */
     display: flex;
     flex-direction: column;
-    gap: 50px;
 }
 
     .sectionsContainer > div {
@@ -29,11 +30,19 @@
         filter: drop-shadow(0 0 2em #61dafbaa);
     }
 
-.sectionTitle {
+.sectionTitleContainer {
     text-align: center;
     font-weight: bold;
     margin-bottom: 50px;
+}
+
+.sectionTitle {
     font-size: 1.5em;
+}
+
+.sectionSubTitle {
+    font-size: 0.8em;
+    color: var(--text-secondary);
 }
 
 /* Section 1: Profile */
