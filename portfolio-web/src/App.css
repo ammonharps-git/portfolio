@@ -16,20 +16,19 @@
 
 .header, 
 .footer {
-  background: rgba(0, 0, 0, 0.30);
-  position: fixed;
   left: 0;
-  width: 100%;
   padding: 10px;
-  flex-direction: row;
   align-items: center;
   color: var(--text-secondary);
 }
 
 .header {
-  top: 0;
-  text-align: left;
   display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  text-align: left;
+  background: rgba(0, 0, 0, 0.30);
 }
 
 .headerText {
@@ -44,9 +43,19 @@
   border-radius: var(--header-logo-size);
 }
 
-
 .footer {
+  display: flex;
+  justify-content: space-between;
   bottom: 0;
-  text-align: center;
 }
 
+.linkIcons {
+  display: flex;
+  gap: 10px;
+}
+
+  .linkIcons .icon {
+    cursor: pointer;
+    width: var(--header-logo-size);
+    height: var(--header-logo-size);
+  }

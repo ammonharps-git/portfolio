@@ -12,4 +12,4 @@ export const ROLES = [
 
 // Github
 export const GITHUB_LINK = "https://github.com/ammonharps-git";
-export const GITHUB_USERNAME = "ammonharps-git";
+export const LINKEDIN_LINK = "https://www.linkedin.com/in/ammonharps";

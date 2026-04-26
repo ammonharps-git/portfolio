@@ -2,6 +2,7 @@ import simpleLogo from './assets/simple-logo.png'
 import * as Constants from './Constants.ts'
 import './App.css'
 import Home from './pages/home/Home.tsx'
+import { Images } from './pages/home/ImageImporter.ts'
 
 function App() {
   return (
@@ -15,7 +16,19 @@ function App() {
       </div>
       <Home/>
       <div className='footer'>
-          Check out my github at <a href={Constants.GITHUB_LINK} target='_blank'>{Constants.GITHUB_USERNAME}</a> to see more of my projects.
+          {/* Copyright */}
+          <span>
+            © 2026 {Constants.FULL_NAME}. All rights reserved.
+          </span>
+          {/* Links */}
+          <span className='linkIcons'>
+            <a href={Constants.GITHUB_LINK} target='_blank'>
+              <img className='icon' src={Images.github} />
+            </a>
+            <a href={Constants.LINKEDIN_LINK} target='_blank'>
+              <img className='icon' src={Images.linkedin} />
+            </a>
+          </span>
       </div>
     </>
   )

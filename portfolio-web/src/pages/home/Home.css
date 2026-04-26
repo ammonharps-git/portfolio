@@ -10,13 +10,13 @@
   --text-secondary: #888;
 }
 
-.sectionsContainer {
+.content {
     margin-top: 50px; /* Offset from header */
     display: flex;
     flex-direction: column;
 }
 
-    .sectionsContainer > div {
+    .content > div {
         padding: 50px;
     }
 

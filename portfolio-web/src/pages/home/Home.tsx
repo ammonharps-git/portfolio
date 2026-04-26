@@ -1,6 +1,6 @@
 import TextTyper from '../../components/text-typer/TextTyper.tsx'
 import profileImage from '../../assets/profile-pic.jpg'
-import { Logos } from './ImageImporter.ts'
+import { Images } from './ImageImporter.ts'
 import * as Constants from '../../Constants.ts'
 import './Home.css'
 
@@ -20,16 +20,16 @@ function Home() {
   }
 
   const skills : LabeledLogo[] = [
-    new LabeledLogo(Logos.html, "HTML", "#ff4b00"),
-    new LabeledLogo(Logos.css, "CSS", "#417aff"),
-    new LabeledLogo(Logos.csharp, "C#", "#62397b"),
-    new LabeledLogo(Logos.cpp, "C++", "#4462b3"),
-    new LabeledLogo(Logos.c, "C", "#4462b3"),
-    new LabeledLogo(Logos.typescript, "Typescript", "#587cff"),
-    new LabeledLogo(Logos.javascript, "JavaScript", "#fffc44", "#000000"),
-    new LabeledLogo(Logos.rust, "Rust", "#515151"),
-    new LabeledLogo(Logos.python, "Python", "#e4b227", "#000000"),
-    new LabeledLogo(Logos.java, "Java", "#ff8b43"),
+    new LabeledLogo(Images.html, "HTML", "#ff4b00"),
+    new LabeledLogo(Images.css, "CSS", "#417aff"),
+    new LabeledLogo(Images.csharp, "C#", "#62397b"),
+    new LabeledLogo(Images.cpp, "C++", "#4462b3"),
+    new LabeledLogo(Images.c, "C", "#4462b3"),
+    new LabeledLogo(Images.typescript, "Typescript", "#587cff"),
+    new LabeledLogo(Images.javascript, "JavaScript", "#fffc44", "#000000"),
+    new LabeledLogo(Images.rust, "Rust", "#515151"),
+    new LabeledLogo(Images.python, "Python", "#e4b227", "#000000"),
+    new LabeledLogo(Images.java, "Java", "#ff8b43"),
   ];
 
   class SectionTitle {
@@ -56,31 +56,33 @@ function Home() {
   }
 
   return (
-    <div className='sectionsContainer'>
-        <div className='profileContainer'>
-            <div className='nameTitleContainer'>
-                <div className='name'>{Constants.FULL_NAME}</div>
-                <TextTyper sentences={Constants.ROLES}/>
-            </div>
-            <img className='profileImage hoverGlow' src={profileImage} alt={`${Constants.FULL_NAME} profile picture`} />
-        </div>
-        <div className='skillsContainer'>
-          {renderSectionTitle(new SectionTitle("Explore Languages", "Click an icon to see more."))}
-          <div className='skillsGrid'>
-          {
-            skills.map(skill => (
-              <div className='skillCard'>
-                { /* TODO: make these expand into small blurb when clicked */}
-                <img className='skillImage hoverGlow' src={skill.image}/>
-                <div className='skillLabel' style={{background: skill.labelBackgroundColor, color: skill.textColorOverride}}>
-                  {skill.label}
-                </div>
+    <>
+      <div className='content'>
+          <div className='profileContainer'>
+              <div className='nameTitleContainer'>
+                  <div className='name'>{Constants.FULL_NAME}</div>
+                  <TextTyper sentences={Constants.ROLES}/>
               </div>
-            ))
-          }
+              <img className='profileImage hoverGlow' src={profileImage} alt={`${Constants.FULL_NAME} profile picture`} />
           </div>
-        </div>
-    </div>
+          <div className='skillsContainer'>
+            {renderSectionTitle(new SectionTitle("Explore Languages", "Click an icon to see more."))}
+            <div className='skillsGrid'>
+            {
+              skills.map(skill => (
+                <div className='skillCard'>
+                  { /* TODO: make these expand into small blurb when clicked */}
+                  <img className='skillImage hoverGlow' src={skill.image}/>
+                  <div className='skillLabel' style={{background: skill.labelBackgroundColor, color: skill.textColorOverride}}>
+                    {skill.label}
+                  </div>
+                </div>
+              ))
+            }
+            </div>
+          </div>
+      </div>
+    </>
   )
 }
 
