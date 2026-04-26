@@ -15,6 +15,21 @@
     gap: 50px;
 }
 
+    .sectionsContainer > div {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+
+.hoverGlow {
+    will-change: filter;
+    transition: filter 300ms ease-in-out;
+}
+
+    .hoverGlow:hover {
+        filter: drop-shadow(0 0 2em #61dafbaa);
+    }
+
 /* Section 1: Profile */
 
 .name {
@@ -40,13 +55,7 @@
     height: var(--profile-image-size);
     width: var(--profile-image-size);
     border-radius: calc(var(--profile-image-size) / 2);
-    will-change: filter;
-    transition: filter 300ms ease-in-out;
 }
-
-    .profileContainer .profileImage:hover {
-        filter: drop-shadow(0 0 2em #61dafbaa);
-    }
 
 /* Section 2: Skills */
 
@@ -55,6 +64,7 @@
     grid-template-columns: repeat(5, minmax(100px, 1fr));
     place-items: center;
     row-gap: 50px;
+    background-color: rgb(0, 0, 0, 0.1);
 }
 
 .skillCard {

@@ -42,17 +42,17 @@ function Home() {
                 <div className='name'>{Constants.FULL_NAME}</div>
                 <TextTyper sentences={Constants.ROLES}/>
             </div>
-            <img className='profileImage' src={profileImage} alt={`${Constants.FULL_NAME} profile picture`} />
+            <img className='profileImage hoverGlow' src={profileImage} alt={`${Constants.FULL_NAME} profile picture`} />
         </div>
         <div className='skillsContainer'>
           {
             skills.map(skill => (
-            <div className='skillCard'>
-              <img className='skillImage' src={skill.image}/>
-              <div className='skillLabel' style={{background: skill.labelBackgroundColor, color: skill.textColorOverride}}>
-                {skill.label}
+              <div className='skillCard'>
+                <img className='skillImage hoverGlow' src={skill.image}/>
+                <div className='skillLabel' style={{background: skill.labelBackgroundColor, color: skill.textColorOverride}}>
+                  {skill.label}
+                </div>
               </div>
-            </div>
             ))
           }
         </div>
