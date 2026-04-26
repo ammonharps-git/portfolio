@@ -1,8 +1,49 @@
 
+/* General  */
+
+#root {
+  /* Variables */
+  --profile-image-size: 300px;
+}
+
 /* Section 1: Profile */
 
+.name {
+  font-size: 3.2em;
+  line-height: 1.1;
+  font-weight: bold;
+  unicode-bidi: isolate; /* TODO: what does this do? */
+}
+
+.profileContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.nameTitleContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.profileImage {
+    height: var(--profile-image-size);
+    width: var(--profile-image-size);
+    border-radius: calc(var(--profile-image-size) / 2);
+    will-change: filter;
+    transition: filter 300ms ease-in-out;
+}
+
+    .profileImage:hover {
+        filter: drop-shadow(0 0 2em #61dafbaa);
+    }
+
 /* Section 2: Skills */
+/* TODO: Skills section */
 
 /* Section 3: Projects */
+/* TODO Projects section */
 
 /* Section 4: Contact Me */
+/* TODO Contact Me section (might be in separate component) */
