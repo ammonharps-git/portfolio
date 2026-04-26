@@ -4,6 +4,15 @@
 #root {
   /* Variables */
   --profile-image-size: 300px;
+  --skill-image-max-size: 100px;
+  --skill-card-max-height: 150px;
+  --skill-card-max-width: 100px;
+}
+
+.sectionsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
 }
 
 /* Section 1: Profile */
@@ -35,12 +44,42 @@
     transition: filter 300ms ease-in-out;
 }
 
-    .profileImage:hover {
+    .profileContainer .profileImage:hover {
         filter: drop-shadow(0 0 2em #61dafbaa);
     }
 
 /* Section 2: Skills */
-/* TODO: Skills section */
+
+.skillsContainer {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(100px, 1fr));
+    place-items: center;
+    row-gap: 50px;
+}
+
+.skillCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 5px;
+    max-width: var(--skill-card-max-width);
+    max-height: var(--skill-card-max-height);
+}
+
+.skillImage {
+    /* TODO */
+    max-width: var(--skill-image-max-size);
+    max-height: var(--skill-image-max-size);
+}
+
+.skillLabel {
+    font-weight: bold;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: rgb(249, 249, 249);
+    border-radius: 5px;
+}
 
 /* Section 3: Projects */
 /* TODO Projects section */
