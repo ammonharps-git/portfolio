@@ -7,7 +7,6 @@
   --skill-image-max-size: 100px;
   --skill-card-max-height: 150px;
   --skill-card-max-width: 100px;
-  --text-secondary: #888;
 }
 
 .content {
@@ -27,7 +26,7 @@
 }
 
     .hoverGlow:hover {
-        filter: drop-shadow(0 0 2em #61dafbaa);
+        filter: drop-shadow(0 0 2em var(--highlight));
     }
 
 .sectionTitleContainer {
@@ -36,7 +35,14 @@
     margin-bottom: 50px;
 }
 
+.sectionComment {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8em;
+    color: var(--highlight);
+}
+
 .sectionTitle {
+    color: var(--text-primary);
     font-size: 1.5em;
 }
 
@@ -48,6 +54,7 @@
 /* Section 1: Profile */
 
 .name {
+  color: var(--text-primary);
   font-size: 3.2em;
   line-height: 1.1;
   font-weight: bold;
@@ -73,10 +80,6 @@
 }
 
 /* Section 2: Skills */
-
-.skillsContainer {
-    background-color: rgb(0, 0, 0, 0.1);
-}
 
 .skillsGrid {
     display: grid;
@@ -105,7 +108,7 @@
     font-weight: bold;
     padding-left: 5px;
     padding-right: 5px;
-    color: rgb(249, 249, 249);
+    color: var(--text-primary);
     border-radius: 5px;
 }
 

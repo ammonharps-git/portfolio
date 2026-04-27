@@ -33,10 +33,12 @@ function Home() {
   ];
 
   class SectionTitle {
+    public comment : string;
     public mainTitle : string;
     public subTitle : string;
 
-    constructor(mainTitle: string, subTitle : string) {
+    constructor(comment : string, mainTitle: string, subTitle : string) {
+      this.comment = comment;
       this.mainTitle = mainTitle;
       this.subTitle = subTitle;
     }
@@ -45,6 +47,9 @@ function Home() {
   function renderSectionTitle(title : SectionTitle) {
     return (
       <div className='sectionTitleContainer'>
+        <div className='sectionComment'>
+          // {title.comment}
+        </div>
         <div className='sectionTitle'>
           {title.mainTitle}
         </div>
@@ -65,8 +70,8 @@ function Home() {
               </div>
               <img className='profileImage hoverGlow' src={profileImage} alt={`${Constants.FULL_NAME} profile picture`} />
           </div>
-          <div className='skillsContainer'>
-            {renderSectionTitle(new SectionTitle("Explore Languages", "Click an icon to see more."))}
+          <div>
+            {renderSectionTitle(new SectionTitle("LANGUAGES", "Explore Languages", "Click an icon to see more."))}
             <div className='skillsGrid'>
             {
               skills.map(skill => (

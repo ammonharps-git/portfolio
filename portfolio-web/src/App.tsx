@@ -5,6 +5,14 @@ import Home from './pages/home/Home.tsx'
 import { Images } from './pages/home/ImageImporter.ts'
 
 function App() {
+  function renderLinkIcon(link : string, imageSource : string) {
+    return <>
+      <a href={link} target='_blank'>
+        <img className='icon' src={imageSource} />
+      </a>
+    </>
+  }
+
   return (
     <>
       <title>{Constants.FIRST_NAME}'s Portfolio</title>
@@ -22,12 +30,8 @@ function App() {
           </span>
           {/* Links */}
           <span className='linkIcons'>
-            <a href={Constants.GITHUB_LINK} target='_blank'>
-              <img className='icon' src={Images.github} />
-            </a>
-            <a href={Constants.LINKEDIN_LINK} target='_blank'>
-              <img className='icon' src={Images.linkedin} />
-            </a>
+            {renderLinkIcon(Constants.GITHUB_LINK, Images.github)}
+            {renderLinkIcon(Constants.LINKEDIN_LINK, Images.linkedin)}
           </span>
       </div>
     </>

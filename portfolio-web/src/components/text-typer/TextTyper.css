@@ -1,4 +1,11 @@
+
+h2 {
+  color: var(--highlight);
+  font-family: 'JetBrains Mono', monospace;
+}
+
 .cursor {
+  color: var(--text-primary);
   display: inline-block;
   margin-left: 2px;
 }
